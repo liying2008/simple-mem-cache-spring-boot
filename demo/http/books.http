@@ -1,0 +1,3 @@
+### find by code
+GET http://localhost:8080/books/bn1
+Content-Type: application/json
