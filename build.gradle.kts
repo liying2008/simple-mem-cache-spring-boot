@@ -1,12 +1,12 @@
 /*
- * Copyright 2025 Li Ying.
+ * Copyright 2025-present Li Ying.
  * Licensed under the MIT License.
  */
 
 plugins {
     id("org.springframework.boot") version "2.6.13" apply false
     id("io.spring.dependency-management") version "1.0.15.RELEASE" apply false
-    id("org.jreleaser") version "1.21.0" apply false
+    id("org.jreleaser") version "1.22.0" apply false
 }
 
 allprojects {

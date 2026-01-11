@@ -1,5 +1,5 @@
 /*
- * Copyright 2025 Li Ying.
+ * Copyright 2025-present Li Ying.
  * Licensed under the MIT License.
  */
 
@@ -11,6 +11,11 @@ import org.slf4j.LoggerFactory;
 
 public class MySimpleCacheListener implements CacheListener<Object, Object> {
     private static final Logger LOGGER = LoggerFactory.getLogger(MySimpleCacheListener.class);
+
+    @Override
+    public void onPut(Object key, Object value) {
+        LOGGER.info("Put [{}] = {}", key, value);
+    }
 
     @Override
     public void onRemove(Object key, Object value, String reason) {

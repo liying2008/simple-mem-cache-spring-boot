@@ -1,3 +1,8 @@
+/*
+ * Copyright 2025-present Li Ying.
+ * Licensed under the MIT License.
+ */
+
 package cc.duduhuo.simplememcache.springboot.demo.book;
 
 public class BookEntity {

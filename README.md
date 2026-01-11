@@ -1,6 +1,6 @@
 # Simple Mem Cache Spring Boot Starter
 
-[![maven-central](https://img.shields.io/maven-central/v/cc.duduhuo/simple-mem-cache-spring-boot.svg?style=flat)](https://mvnrepository.com/artifact/cc.duduhuo/simple-mem-cache-spring-boot)
+[![maven-central](https://img.shields.io/maven-central/v/cc.duduhuo/simple-mem-cache-spring-boot-starter.svg?style=flat)](https://mvnrepository.com/artifact/cc.duduhuo/simple-mem-cache-spring-boot-starter)
 
 用于在 **Spring Boot** 项目中方便集成 [simple-mem-cache](https://github.com/liying2008/simple-mem-cache) 。
 
@@ -17,20 +17,20 @@
 <dependency>
     <groupId>cc.duduhuo</groupId>
     <artifactId>simple-mem-cache-spring-boot-starter</artifactId>
-    <version>1.2.1-1</version>
+    <version>1.3.0-1</version>
 </dependency>
 ```
 
 - 使用 Gradle (Groovy)
 
 ```groovy
-implementation 'cc.duduhuo:simple-mem-cache-spring-boot-starter:1.2.1-1'
+implementation 'cc.duduhuo:simple-mem-cache-spring-boot-starter:1.3.0-1'
 ```
 
 - 使用 Gradle (Kotlin)
 
 ```kotlin
-implementation("cc.duduhuo:simple-mem-cache-spring-boot-starter:1.2.1-1")
+implementation("cc.duduhuo:simple-mem-cache-spring-boot-starter:1.3.0-1")
 ```
 
 ## 配置项列表
@@ -81,6 +81,11 @@ public class MySimpleCacheListener implements CacheListener<Object, Object> {
     private static final Logger LOGGER = LoggerFactory.getLogger(MySimpleCacheListener.class);
 
     @Override
+    public void onPut(Object key, Object value) {
+        LOGGER.info("Put [{}] = {}", key, value);
+    }
+
+    @Override
     public void onRemove(Object key, Object value, String reason) {
         LOGGER.info("Removed [{}] = {} because {}", key, value, reason);
     }
@@ -94,4 +99,4 @@ public class MySimpleCacheListener implements CacheListener<Object, Object> {
 
 ## License
 
-MIT License © 2025 Li Ying
+MIT License © 2025-present Li Ying
