@@ -8,13 +8,14 @@ import org.jreleaser.model.Active
 plugins {
     id("org.springframework.boot")
     id("io.spring.dependency-management")
+    id("org.springframework.boot.optional-dependencies")
     id("org.jreleaser")
     `java-library`
     `maven-publish`
 }
 
 group = "cc.duduhuo"
-version = "1.3.0-1"
+version = "1.3.1-1"
 
 java {
     sourceCompatibility = JavaVersion.VERSION_1_8
@@ -24,10 +25,10 @@ java {
 }
 
 dependencies {
-    api("cc.duduhuo:simple-mem-cache:1.3.0")
+    api("cc.duduhuo:simple-mem-cache:1.3.1")
     implementation("org.springframework.boot:spring-boot-starter")
     annotationProcessor("org.springframework.boot:spring-boot-configuration-processor")
-    compileOnly("org.springframework.boot:spring-boot-configuration-processor")
+    optional("io.micrometer:micrometer-core")
     testImplementation("org.springframework.boot:spring-boot-starter-test")
 }
 

@@ -1,1 +1,2 @@
 cc.duduhuo.simplememcache.springboot.SimpleCacheAutoConfiguration
+cc.duduhuo.simplememcache.springboot.SimpleCacheMetricsAutoConfiguration

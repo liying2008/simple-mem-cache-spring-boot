@@ -17,20 +17,20 @@
 <dependency>
     <groupId>cc.duduhuo</groupId>
     <artifactId>simple-mem-cache-spring-boot-starter</artifactId>
-    <version>1.3.0-1</version>
+    <version>1.3.1-1</version>
 </dependency>
 ```
 
 - 使用 Gradle (Groovy)
 
 ```groovy
-implementation 'cc.duduhuo:simple-mem-cache-spring-boot-starter:1.3.0-1'
+implementation 'cc.duduhuo:simple-mem-cache-spring-boot-starter:1.3.1-1'
 ```
 
 - 使用 Gradle (Kotlin)
 
 ```kotlin
-implementation("cc.duduhuo:simple-mem-cache-spring-boot-starter:1.3.0-1")
+implementation("cc.duduhuo:simple-mem-cache-spring-boot-starter:1.3.1-1")
 ```
 
 ## 配置项列表
