@@ -92,6 +92,52 @@ public class MySimpleCacheListener implements CacheListener<Object, Object> {
 }
 ```
 
+## Metrics binding (Actuator)
+
+`simple-mem-cache-spring-boot-starter` 提供了以下 Metrics 绑定，支持将缓存统计信息暴露给 Prometheus 等度量平台。
+
+- `simple.cache.size`：当前有效缓存个数
+- `simple.cache.hits`：缓存命中次数
+- `simple.cache.misses`：缓存未命中次数
+- `simple.cache.evictions`：缓存清理次数
+
+### 开启方法
+
+1. 添加依赖：
+
+```gradle
+implementation("org.springframework.boot:spring-boot-starter-actuator")
+```
+
+2. 添加配置：
+
+在 `application.properties` 中添加以下配置：
+
+```properties
+management.endpoints.web.exposure.include=metrics
+```
+
+3. 访问指定端点：
+
+访问 `/actuator/metrics/simple.cache.*` 即可获取统计信息。如 `/actuator/metrics/simple.cache.size` 。
+
+输出示例：
+
+```json
+{
+  "name": "simple.cache.size",
+  "description": "The number of valid entries in the cache",
+  "baseUnit": "entries",
+  "measurements": [
+    {
+      "statistic": "VALUE",
+      "value": 2
+    }
+  ],
+  "availableTags": []
+}
+```
+
 ## 版本要求
 
 - Java 8+
